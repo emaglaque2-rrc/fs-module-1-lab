@@ -2,7 +2,8 @@
  * Employee and Department data taken from the
  * Pixell River Financial Case Study that was linked (pgs. 17–18).
  * 
- * Data is structured using Department and Employee objects
+ * Data is structured using Department and Employee objects and to 
+ * match the interfaces shown in the lab instructions,
  * so it can be easily read and rendered into the DOM.
  * 
  * \\\\ IMPORTANT I used AI to help me convert the data into this 
@@ -84,3 +85,9 @@ const departments = [
         ]
     }
 ];
+
+document.addEventListener("DOMContentLoaded", () => {
+    const directoryContainerNode = document.getElementById("directory-container");
+    const yearNode = document.getElementById("year");
+
+});
