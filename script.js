@@ -3,7 +3,7 @@
  * Pixell River Financial Case Study that was linked (pgs. 17–18).
  * 
  * Data is structured using Department and Employee objects and to 
- * match the interfaces shown in the lab instructions,
+ * "closely" match the interfaces shown in the lab instructions,
  * so it can be easily read and rendered into the DOM.
  * 
  * \\\\ IMPORTANT I used AI to help me convert the data into this 
@@ -86,10 +86,34 @@ const departments = [
     }
 ];
 
+const renderEmployeeDirectory = (containerNode, departments) => {
+    departments.forEach(department => {
+        // Createe department section in HTML
+        const departmentSectionNode = document.createElement("section");
+        const departmentHeadingNode = document.createElement("h2");
+        const employeeListNode = document.createElement("ul");
+
+        // Create list items for each employee in the department
+        department.employees.forEach(employee => {
+            const employeeListItemNode = document.createElement("li");
+            employeeListItemNode.textContent = `${employee.firstName} ${employee.lastName}`;
+            employeeListNode.appendChild(employeeListItemNode);
+        });
+
+        // Append heading and employee list to department section
+        departmentHeadingNode.textContent = department.name;
+        departmentSectionNode.appendChild(departmentHeadingNode);
+        departmentSectionNode.appendChild(employeeListNode);
+
+        // Append department section to the main container
+        containerNode.appendChild(departmentSectionNode);
+    });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
     const directoryContainerNode = document.getElementById("directory-container");
     const yearNode = document.getElementById("year");
-    
+
     // Renders current year in footer
     // REFERENCE for getFullYear(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear
     // kind of too lazy to make a new function for this so it'll just sit in addEventListener for now! :)
@@ -97,4 +121,5 @@ document.addEventListener("DOMContentLoaded", () => {
     yearNode.textContent = currentYear;
 
     // Renders department and employee data into the DOM
+    renderEmployeeDirectory(directoryContainerNode, departments);
 });
