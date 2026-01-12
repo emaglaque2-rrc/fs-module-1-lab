@@ -89,5 +89,12 @@ const departments = [
 document.addEventListener("DOMContentLoaded", () => {
     const directoryContainerNode = document.getElementById("directory-container");
     const yearNode = document.getElementById("year");
+    
+    // Renders current year in footer
+    // REFERENCE for getFullYear(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear
+    // kind of too lazy to make a new function for this so it'll just sit in addEventListener for now! :)
+    const currentYear = new Date().getFullYear();
+    yearNode.textContent = currentYear;
 
+    // Renders department and employee data into the DOM
 });
