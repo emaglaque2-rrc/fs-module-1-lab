@@ -1,4 +1,4 @@
-import { Departments } from "./Department"; 
+import { Department, Departments } from "./Department"; 
 
 /**
  * Employee and Department data taken from the
@@ -87,3 +87,17 @@ export const departments: Departments[] = [
         ]
     }
 ];
+
+export function Directory() {
+    return (
+        <div id="directory-container">
+            {departments.map((department, index) => (
+                <Department
+                    key={index}
+                    name={department.name}
+                    employees={department.employees}
+                />
+            ))}
+        </div>
+    )
+}
