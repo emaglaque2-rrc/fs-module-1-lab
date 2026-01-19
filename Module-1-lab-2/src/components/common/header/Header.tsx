@@ -1,6 +1,6 @@
 import "./Header.css";
 
-export function Header() {
+function Header() {
     return (
         <header>
             <img
@@ -15,3 +15,5 @@ export function Header() {
         </header>
     );
 }
+
+export default Header;
