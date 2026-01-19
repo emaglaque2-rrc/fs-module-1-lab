@@ -4,8 +4,9 @@ export interface Employee {
 }
 
 export function Employee({firstName, lastName}: Employee) {
-    return 
+    return (
         <li>
             {firstName} {lastName}
-        </li>;
+        </li>
+    );
 };
