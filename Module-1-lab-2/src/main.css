@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 1em;
+    border-bottom: 0.25em solid #ccc;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    max-width: 900em;
+    margin: auto;
+}
+
+.logo {
+    width: 6em;
+    height: auto;
+}
+
+main {
+    max-width: 50em;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: #ffffff;
+}
